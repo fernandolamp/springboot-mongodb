@@ -1,11 +1,11 @@
 package com.example.mongospring.dto;
 
 import com.example.mongospring.domain.User;
-import org.springframework.data.annotation.Id;
 
-public class UserDTO {
+import java.io.Serializable;
 
-    @Id
+public class UserDTO implements Serializable {
+
     private String id;
 
     public UserDTO() {
