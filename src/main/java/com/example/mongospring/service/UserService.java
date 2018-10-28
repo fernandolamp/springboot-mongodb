@@ -35,14 +35,25 @@ public class UserService {
         return new User(obj.getId(),obj.getName(),obj.getEmail());
     }
 
-    public void Delete(String id){
+    public void delete(String id){
         findById(id);
         repository.deleteById(id);
     }
 
 
-    public void Delete(User obj){
+    public void delete(User obj){
         repository.delete(obj);
+    }
+
+    public User update(User obj){
+        User newObj = findById(obj.getId());
+        updateData(obj,newObj);
+        return repository.save(newObj);
+    }
+
+    private void updateData(User obj, User newObj) {
+        newObj.setEmail(obj.getEmail());
+        newObj.setName(obj.getName());
     }
 
 }
