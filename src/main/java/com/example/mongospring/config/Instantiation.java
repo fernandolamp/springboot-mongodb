@@ -2,6 +2,7 @@ package com.example.mongospring.config;
 
 import com.example.mongospring.domain.Post;
 import com.example.mongospring.domain.User;
+import com.example.mongospring.dto.AuthorDTO;
 import com.example.mongospring.repository.PostRepository;
 import com.example.mongospring.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +37,8 @@ public class Instantiation implements CommandLineRunner {
 
         userRepository.saveAll(Arrays.asList(maria,alex,bob));
 
-        Post post1 = new Post(null,"Partiu viagem",sdf.parse("21/03/2018"),"vou para passagarda",maria);
-        Post post2 = new Post(null,"Bom dia!",sdf.parse("23/05/2018"),"Acordei feliz!",maria);
+        Post post1 = new Post(null,"Partiu viagem",sdf.parse("21/03/2018"),"vou para passagarda",new AuthorDTO(maria));
+        Post post2 = new Post(null,"Bom dia!",sdf.parse("23/05/2018"),"Acordei feliz!",new AuthorDTO(maria));
 
         postRepository.saveAll(Arrays.asList(post1,post2));
     }
