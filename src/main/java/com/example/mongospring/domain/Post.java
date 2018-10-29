@@ -16,6 +16,7 @@ public class Post implements Serializable {
     private String title;
     private Date date;
     private AuthorDTO author;
+    private String body;
 
     public Post(String id, String title, Date date, String body, AuthorDTO author) {
         this.id = id;
@@ -73,8 +74,6 @@ public class Post implements Serializable {
     public void setBody(String body) {
         this.body = body;
     }
-
-    private String body;
 
     public AuthorDTO getAuthor() {
         return author;
