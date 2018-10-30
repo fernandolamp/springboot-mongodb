@@ -1,8 +1,6 @@
 package com.example.mongospring.service;
 
 import com.example.mongospring.domain.Post;
-import com.example.mongospring.domain.User;
-import com.example.mongospring.dto.UserDTO;
 import com.example.mongospring.repository.PostRepository;
 import com.example.mongospring.service.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +24,7 @@ public class PostService {
     }
 
     public List<Post> findByTitle(String text){
-        return repository.findByTitleContainingIgnoreCase(text);
+        return repository.findByTitle(text);
     }
 
 }
